@@ -1,0 +1,60 @@
+2016/08/21 14:26:38.024 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:26:38.079 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:26:38.134 Running as a console application, creating the console host. 
+2016/08/21 14:26:38.313 Starting up as a console application 
+2016/08/21 14:26:38.313 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 14:28:55.411 The service threw an unhandled exception System.IO.IOException: Процесс не может получить доступ к файлу "D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\out\output1.pdf", так как этот файл используется другим процессом.
+   в System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   в System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   в System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   в PdfSharp.Pdf.PdfDocument.Save(String path)
+   в MigraDoc.Rendering.PdfDocumentRenderer.Save(String path)
+   в ImageMergingService.MergingService.Scan(Object obj) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\MergingService.cs:строка 106
+   в System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   в System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   в System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   в System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   в System.Threading.ThreadHelper.ThreadStart(Object obj)
+2016/08/21 14:32:52.598 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:32:52.618 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:32:52.638 Running as a console application, creating the console host. 
+2016/08/21 14:32:52.638 Starting up as a console application 
+2016/08/21 14:32:52.658 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 14:36:28.215 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:36:28.245 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:36:28.265 Running as a console application, creating the console host. 
+2016/08/21 14:36:28.265 Starting up as a console application 
+2016/08/21 14:36:28.285 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 14:39:14.009 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:39:14.039 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:39:14.059 Running as a console application, creating the console host. 
+2016/08/21 14:39:14.059 Starting up as a console application 
+2016/08/21 14:39:14.079 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 14:44:14.766 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:44:14.816 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:44:14.852 Running as a console application, creating the console host. 
+2016/08/21 14:44:14.864 Starting up as a console application 
+2016/08/21 14:44:14.864 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 14:53:47.762 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 14:53:47.845 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 14:53:47.872 Running as a console application, creating the console host. 
+2016/08/21 14:53:47.872 Starting up as a console application 
+2016/08/21 14:53:47.907 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 15:00:46.230 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 15:00:46.304 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 15:00:46.324 Running as a console application, creating the console host. 
+2016/08/21 15:00:46.344 Starting up as a console application 
+2016/08/21 15:00:46.344 The ImageMergingService service is now running, press Control+C to exit. 
+2016/08/21 15:09:28.237 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/08/21 15:09:28.267 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/21 15:09:28.287 Running as a console application, creating the console host. 
+2016/08/21 15:09:28.297 Starting up as a console application 
+2016/08/21 15:09:28.297 The ImageMergingService service is now running, press Control+C to exit. 
