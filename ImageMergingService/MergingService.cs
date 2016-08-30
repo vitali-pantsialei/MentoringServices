@@ -1,5 +1,7 @@
 ﻿using MigraDoc.DocumentObjectModel;
 using MigraDoc.Rendering;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,27 +17,26 @@ namespace ImageMergingService
 {
     class MergingService
     {
-        private int outputNumber = 0;
+        private const string queueName = "pdfqueue";
+        private const string statusQueue = "status";
+        private const string changeSettingsQueue = "settings";
         private string inputDir;
-        private string outputDir;
         private string wrongFilesDir;
-        private Thread workThread;
+        private Thread workThread, changeThread;
         private const string fileRegex = @"([a-zA-Z]+)_([0-9]+)\.(img|png|jpeg|jpg)";
         private FileSystemWatcher watcher;
         private AutoResetEvent newFileEvent;
         private ManualResetEvent stopWorkEvent;
+        private int fileCheckCount = 3;
+        private object checkCountLock = new object();
 
-        public MergingService(string inputDir, string outputDir, string wrongFilesDir)
+        public MergingService(string inputDir, string wrongFilesDir)
         {
             this.inputDir = inputDir;
-            this.outputDir = outputDir;
             this.wrongFilesDir = wrongFilesDir;
 
             if (!Directory.Exists(inputDir))
                 Directory.CreateDirectory(inputDir);
-
-            if (!Directory.Exists(outputDir))
-                Directory.CreateDirectory(outputDir);
 
             if (!Directory.Exists(wrongFilesDir))
                 Directory.CreateDirectory(wrongFilesDir);
@@ -43,19 +44,7 @@ namespace ImageMergingService
             watcher = new FileSystemWatcher(inputDir);
             watcher.Created += watcher_Created;
             workThread = new Thread(Scan);
-
-            foreach (var file in Directory.EnumerateFiles(outputDir))
-            {
-                Match m = Regex.Match(Path.GetFileName(file), @"output([0-9]+)\.pdf");
-                if (m.Success)
-                {
-                    if (outputNumber < Int32.Parse(m.Groups[1].Value))
-                    {
-                        outputNumber = Int32.Parse(m.Groups[1].Value);
-                    }
-                }
-            }
-            ++outputNumber;
+            changeThread = new Thread(Settings);
 
             newFileEvent = new AutoResetEvent(false);
             stopWorkEvent = new ManualResetEvent(false);
@@ -69,6 +58,7 @@ namespace ImageMergingService
         public void Start()
         {
             workThread.Start();
+            changeThread.Start();
             watcher.EnableRaisingEvents = true;
         }
 
@@ -77,6 +67,7 @@ namespace ImageMergingService
             watcher.EnableRaisingEvents = false;
             stopWorkEvent.Set();
             workThread.Join();
+            changeThread.Join();
         }
 
         private void Scan(object obj)
@@ -92,13 +83,14 @@ namespace ImageMergingService
                     Match m = Regex.Match(fileName, fileRegex);
                     if (m.Success)
                     {
+                        Send(statusQueue, System.Text.Encoding.UTF8.GetBytes(DateTime.Now + ": process files!"));
                         string lastFileName;
                         var reader = new BarcodeReader() { AutoRotate = true };
                         var document = new Document();
                         var section = document.AddSection();
                         int fileNumber = Int32.Parse(m.Groups[2].Value);
 
-                        while (TryOpen(Path.Combine(inputDir, fileName), 3))
+                        while (TryOpen(Path.Combine(inputDir, fileName), fileCheckCount))
                         {
                             // For barcodes
                             var bmp = (Bitmap)Bitmap.FromFile(file);
@@ -121,11 +113,21 @@ namespace ImageMergingService
                         // Remember last file
                         lastFileName = fileName;
 
+                        byte[] fileContents = null;
                         var render = new PdfDocumentRenderer();
                         render.Document = document;
-
                         render.RenderDocument();
-                        render.Save(Path.Combine(outputDir, "output" + (outputNumber++) + ".pdf"));
+                        using (MemoryStream stream = new MemoryStream())
+                        {
+                            render.Save(stream, true);
+                            fileContents = stream.ToArray();
+                        }
+
+                        if (fileContents != null)
+                        {
+                            Send(queueName, fileContents);
+                            Console.WriteLine("File has been sent");
+                        }
 
                         // Remove all used images
                         fileNumber = Int32.Parse(m.Groups[2].Value);
@@ -145,27 +147,101 @@ namespace ImageMergingService
                     // Move wrong file
                     else
                     {
-                        File.Move(file, Path.Combine(wrongFilesDir, fileName));
+                        Send(statusQueue, System.Text.Encoding.UTF8.GetBytes(DateTime.Now + ": wrong file format!"));
+                        try
+                        {
+                            File.Move(file, Path.Combine(wrongFilesDir, fileName));
+                        }
+                        catch
+                        {
+                            File.Delete(Path.Combine(inputDir, fileName));
+                        }
                     }
                 }
+                Send(statusQueue, System.Text.Encoding.UTF8.GetBytes(DateTime.Now + ": Free!"));
             }
             while (WaitHandle.WaitAny(new WaitHandle[] { stopWorkEvent, newFileEvent }, 1000) != 0);
         }
 
+        private void Settings(object obj)
+        {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            {
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: changeSettingsQueue,
+                        durable: true,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null);
+
+                    channel.BasicQos(0, 1, false);
+
+                    var consumer = new EventingBasicConsumer(channel);
+
+                    consumer.Received += (model, ea) =>
+                    {
+                        var body = ea.Body;
+                        lock (checkCountLock)
+                        {
+                            fileCheckCount = Int32.Parse(System.Text.Encoding.UTF8.GetString(body));
+                        }
+                        Console.WriteLine("Checking count updated!");
+                        channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                    };
+                    do
+                    {
+                        channel.BasicConsume(queue: changeSettingsQueue,
+                                             noAck: false,
+                                             consumer: consumer);
+                    }
+                    while (!stopWorkEvent.WaitOne(1000));
+                }
+            }
+        }
+
+        private void Send(string address, byte[] content)
+        {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            {
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: address,
+                                         durable: true,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
+
+                    var properties = channel.CreateBasicProperties();
+                    properties.Persistent = true;
+
+                    channel.BasicPublish(exchange: "",
+                                         routingKey: address,
+                                         basicProperties: properties,
+                                         body: content);
+                }
+            }
+        }
+
         private bool TryOpen(string fileName, int tryCount)
         {
-            for (int i = 0; i < tryCount; i++)
+            lock (checkCountLock)
             {
-                try
+                for (int i = 0; i < tryCount; i++)
                 {
-                    var file = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.None);
-                    file.Close();
+                    try
+                    {
+                        var file = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.None);
+                        file.Close();
 
-                    return true;
-                }
-                catch (IOException)
-                {
-                    Thread.Sleep(5000);
+                        return true;
+                    }
+                    catch (IOException)
+                    {
+                        Thread.Sleep(5000);
+                    }
                 }
             }
 

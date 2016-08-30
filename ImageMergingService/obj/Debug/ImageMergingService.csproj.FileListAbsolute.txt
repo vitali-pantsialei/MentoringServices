@@ -29,3 +29,4 @@ D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\z
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\zxing.xml
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\zxing.presentation.pdb
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\zxing.presentation.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\ImageMergingService\bin\Debug\RabbitMQ.Client.dll

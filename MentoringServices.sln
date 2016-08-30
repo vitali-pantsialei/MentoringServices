@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageMergingService", "ImageMergingService\ImageMergingService.csproj", "{F49BC25B-4101-4E2E-8872-7657EC95489F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralService", "CentralService\CentralService.csproj", "{E7C09A8A-636A-4E4E-841D-805109A3467D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F49BC25B-4101-4E2E-8872-7657EC95489F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49BC25B-4101-4E2E-8872-7657EC95489F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49BC25B-4101-4E2E-8872-7657EC95489F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C09A8A-636A-4E4E-841D-805109A3467D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C09A8A-636A-4E4E-841D-805109A3467D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C09A8A-636A-4E4E-841D-805109A3467D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C09A8A-636A-4E4E-841D-805109A3467D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

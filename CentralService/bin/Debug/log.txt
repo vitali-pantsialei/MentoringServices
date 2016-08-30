@@ -1,0 +1,136 @@
+2016/08/30 17:58:47.795 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 17:58:47.825 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 17:58:47.855 Running as a console application, creating the console host. 
+2016/08/30 17:58:47.855 Starting up as a console application 
+2016/08/30 17:58:47.885 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 17:59:00.605 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 17:59:00.645 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 17:59:00.665 Running as a console application, creating the console host. 
+2016/08/30 17:59:00.685 Starting up as a console application 
+2016/08/30 17:59:00.685 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:02:51.678 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:02:51.698 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:02:51.718 Running as a console application, creating the console host. 
+2016/08/30 18:02:51.738 Starting up as a console application 
+2016/08/30 18:02:51.768 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:04:04.825 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:04:04.845 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:04:04.875 Running as a console application, creating the console host. 
+2016/08/30 18:04:04.875 Starting up as a console application 
+2016/08/30 18:04:04.895 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:06:39.353 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:06:39.433 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:06:39.453 Running as a console application, creating the console host. 
+2016/08/30 18:06:39.483 Starting up as a console application 
+2016/08/30 18:06:39.503 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:16:05.500 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:16:05.530 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:16:05.550 Running as a console application, creating the console host. 
+2016/08/30 18:16:05.570 Starting up as a console application 
+2016/08/30 18:16:05.600 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:16:05.710 The service threw an unhandled exception RabbitMQ.Client.Exceptions.OperationInterruptedException: The AMQP operation was interrupted: AMQP close-reason, initiated by Peer, code=406, text="PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'pdfqueue' in vhost '/': received 'false' but current is 'true'", classId=50, methodId=10, cause=
+   в RabbitMQ.Client.Impl.SimpleBlockingRpcContinuation.GetReply(TimeSpan timeout)
+   в RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean passive, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   в RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   в CentralService.CentralSaveService.Scan(Object obj) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\CentralSaveService.cs:строка 66
+   в System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   в System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   в System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   в System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   в System.Threading.ThreadHelper.ThreadStart(Object obj)
+2016/08/30 18:30:31.092 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:30:31.172 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:30:31.192 Running as a console application, creating the console host. 
+2016/08/30 18:30:31.212 Starting up as a console application 
+2016/08/30 18:30:31.232 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:35:03.399 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:35:03.419 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:35:03.449 Running as a console application, creating the console host. 
+2016/08/30 18:35:03.449 Starting up as a console application 
+2016/08/30 18:35:03.489 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:45:10.914 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:45:11.024 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:45:11.054 Running as a console application, creating the console host. 
+2016/08/30 18:45:11.064 Starting up as a console application 
+2016/08/30 18:45:11.104 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 18:46:44.202 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 18:46:44.282 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 18:46:44.312 Running as a console application, creating the console host. 
+2016/08/30 18:46:44.332 Starting up as a console application 
+2016/08/30 18:46:44.342 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 21:36:40.002 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 21:36:40.034 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 21:36:40.066 Running as a console application, creating the console host. 
+2016/08/30 21:36:40.094 Starting up as a console application 
+2016/08/30 21:36:40.121 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 21:40:19.718 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 21:40:19.746 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 21:40:19.818 Running as a console application, creating the console host. 
+2016/08/30 21:40:19.854 Starting up as a console application 
+2016/08/30 21:40:19.866 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 21:43:22.922 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 21:43:22.942 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 21:43:22.972 Running as a console application, creating the console host. 
+2016/08/30 21:43:22.982 Starting up as a console application 
+2016/08/30 21:43:22.982 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 21:57:15.691 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 21:57:15.725 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 21:57:15.752 Running as a console application, creating the console host. 
+2016/08/30 21:57:15.768 Starting up as a console application 
+2016/08/30 21:57:15.768 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 22:07:17.111 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 22:07:17.145 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 22:07:17.176 Running as a console application, creating the console host. 
+2016/08/30 22:07:17.200 Starting up as a console application 
+2016/08/30 22:07:17.228 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 22:08:27.020 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 22:08:27.049 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 22:08:27.076 Running as a console application, creating the console host. 
+2016/08/30 22:08:27.105 Starting up as a console application 
+2016/08/30 22:08:27.127 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 22:15:12.395 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 22:15:12.457 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 22:15:12.487 Running as a console application, creating the console host. 
+2016/08/30 22:15:12.509 Starting up as a console application 
+2016/08/30 22:15:12.521 The CentralService service is now running, press Control+C to exit. 
+2016/08/30 22:27:21.703 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/30 22:27:21.763 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/30 22:27:21.793 Running as a console application, creating the console host. 
+2016/08/30 22:27:21.813 Starting up as a console application 
+2016/08/30 22:27:21.813 The CentralService service is now running, press Control+C to exit. 
+2016/08/31 00:22:44.224 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/31 00:22:44.248 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/31 00:22:44.275 Running as a console application, creating the console host. 
+2016/08/31 00:22:44.291 Starting up as a console application 
+2016/08/31 00:22:44.324 The CentralService service is now running, press Control+C to exit. 
+2016/08/31 00:26:44.691 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/31 00:26:44.715 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/31 00:26:44.747 Running as a console application, creating the console host. 
+2016/08/31 00:26:44.747 Starting up as a console application 
+2016/08/31 00:26:44.798 The CentralService service is now running, press Control+C to exit. 
+2016/08/31 00:30:59.776 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/08/31 00:30:59.800 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/08/31 00:30:59.830 Running as a console application, creating the console host. 
+2016/08/31 00:30:59.830 Starting up as a console application 
+2016/08/31 00:30:59.854 The CentralService service is now running, press Control+C to exit. 

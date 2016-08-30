@@ -1,6 +1,8 @@
 ﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,16 +12,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Topshelf;
 
-namespace ImageMergingService
+namespace CentralService
 {
     class Program
     {
         static void Main(string[] args)
         {
             var currentDir = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            var inDir = Path.Combine(currentDir, "in");
-            var wrongDir = Path.Combine(currentDir, "err");
-
+            var outDir = Path.Combine(currentDir, "out");
+            var statDir = Path.Combine(currentDir, "status");
+            var confDir = Path.Combine(currentDir, "config");
 
             var conf = new LoggingConfiguration();
             var fileTarget = new FileTarget()
@@ -34,10 +36,10 @@ namespace ImageMergingService
             var logFactory = new LogFactory(conf);
 
             HostFactory.Run(
-                hostConf => hostConf.Service<MergingService>(
+                hostConf => hostConf.Service<CentralSaveService>(
                     s =>
                     {
-                        s.ConstructUsing(() => new MergingService(inDir, wrongDir));
+                        s.ConstructUsing(() => new CentralSaveService(outDir, statDir, confDir));
                         s.WhenStarted(serv => serv.Start());
                         s.WhenStopped(serv => serv.Stop());
                     }
