@@ -1,0 +1,10 @@
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\NLog.config
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\AopDProxy.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\AopDProxy.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\Castle.Core.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\NLog.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\Castle.Core.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\bin\Debug\NLog.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\obj\Debug\AopDProxy.csprojResolveAssemblyReference.cache
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\obj\Debug\AopDProxy.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\obj\Debug\AopDProxy.pdb

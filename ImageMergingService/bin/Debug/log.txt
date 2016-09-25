@@ -64,3 +64,15 @@
 2016/08/31 00:30:54.320 Running as a console application, creating the console host. 
 2016/08/31 00:30:54.340 Starting up as a console application 
 2016/08/31 00:30:54.391 The ImageMergingService service is now running, press Control+C to exit. 
+2016/09/25 18:07:56.467 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/09/25 18:07:56.516 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:07:56.541 Running as a console application, creating the console host. 
+2016/09/25 18:07:56.558 Starting up as a console application 
+2016/09/25 18:07:56.586 The ImageMergingService service is now running, press Control+C to exit. 
+2016/09/25 18:43:46.539 Configuration Result:
+[Success] Name ImageMergingService, [Success] ServiceName ImageMergingService 
+2016/09/25 18:43:46.566 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:43:46.591 Running as a console application, creating the console host. 
+2016/09/25 18:43:46.608 Starting up as a console application 
+2016/09/25 18:43:46.661 The ImageMergingService service is now running, press Control+C to exit. 

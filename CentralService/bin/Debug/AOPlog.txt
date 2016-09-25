@@ -1,0 +1,12 @@
+2016-09-25 17:58:06.7873|INFO|AopDProxy.ServiceInterceptor|{0} - {1}
+Params:
+{3}
+2016-09-25 17:58:29.6956|INFO|AopDProxy.ServiceInterceptor|{0} - {1}
+Params:
+{3}
+2016-09-25 18:00:19.5278|INFO|AopDProxy.ServiceInterceptor|25.09.2016 18:00:19 - Start
+Params:
+System.Object[]
+2016-09-25 18:03:56.0611|INFO|AopDProxy.ServiceInterceptor|25.09.2016 18:03:56 - Start Params:
+2016-09-25 18:08:11.8826|INFO|AopDProxy.ServiceInterceptor|25.09.2016 18:08:11 - Start Params:
+2016-09-25 18:43:20.9801|INFO|AopDProxy.ServiceInterceptor|25.09.2016 18:43:20 - Start Params:

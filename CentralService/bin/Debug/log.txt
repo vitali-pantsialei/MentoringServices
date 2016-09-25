@@ -134,3 +134,139 @@
 2016/08/31 00:30:59.830 Running as a console application, creating the console host. 
 2016/08/31 00:30:59.830 Starting up as a console application 
 2016/08/31 00:30:59.854 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 17:43:53.002 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:43:53.062 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:43:53.564 An exception occurred creating the host Topshelf.ServiceBuilderException: An exception occurred creating the service: ICentralService ---> System.ArgumentException: 'classToProxy' must be a class
+Имя параметра: classToProxy
+   в Castle.DynamicProxy.ProxyGenerator.CreateClassProxyWithTarget(Type classToProxy, Type[] additionalInterfacesToProxy, Object target, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+   в Castle.DynamicProxy.ProxyGenerator.CreateClassProxyWithTarget[TClass](TClass target, IInterceptor[] interceptors)
+   в CentralService.CentralServiceProvider.CreateInstance(IContext context) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\CentralServiceProvider.cs:строка 31
+   в Ninject.Activation.Provider`1.Create(IContext context)
+   в Ninject.Activation.Context.ResolveInternal(Object scope)
+   в Ninject.Activation.Context.Resolve()
+   в Ninject.KernelBase.<>c__DisplayClass15.<Resolve>b__f(IBinding binding)
+   в System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   в System.Linq.Enumerable.<CastIterator>d__94`1.MoveNext()
+   в System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   в Ninject.ResolutionExtensions.Get[T](IResolutionRoot root, IParameter[] parameters)
+   в CentralService.Program.<>c__DisplayClass8.<Main>b__3() в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\Program.cs:строка 43
+   в Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass0_0`1.<ConstructUsing>b__0(HostSettings settings)
+   в Topshelf.Builders.DelegateServiceBuilder`1.Build(HostSettings settings)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Topshelf.Builders.DelegateServiceBuilder`1.Build(HostSettings settings)
+   в Topshelf.Builders.RunBuilder.Build(ServiceBuilder serviceBuilder)
+   в Topshelf.HostConfigurators.HostConfiguratorImpl.CreateHost()
+   в Topshelf.HostFactory.New(Action`1 configureCallback)
+2016/09/25 17:44:12.484 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:44:12.514 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:44:12.695 An exception occurred creating the host Topshelf.ServiceBuilderException: An exception occurred creating the service: ICentralService ---> System.ArgumentException: 'classToProxy' must be a class
+Имя параметра: classToProxy
+   в Castle.DynamicProxy.ProxyGenerator.CreateClassProxyWithTarget(Type classToProxy, Type[] additionalInterfacesToProxy, Object target, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+   в Castle.DynamicProxy.ProxyGenerator.CreateClassProxyWithTarget[TClass](TClass target, IInterceptor[] interceptors)
+   в CentralService.CentralServiceProvider.CreateInstance(IContext context) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\CentralServiceProvider.cs:строка 31
+   в Ninject.Activation.Provider`1.Create(IContext context)
+   в Ninject.Activation.Context.ResolveInternal(Object scope)
+   в Ninject.Activation.Context.Resolve()
+   в Ninject.KernelBase.<>c__DisplayClass15.<Resolve>b__f(IBinding binding)
+   в System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   в System.Linq.Enumerable.<CastIterator>d__94`1.MoveNext()
+   в System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   в Ninject.ResolutionExtensions.Get[T](IResolutionRoot root, IParameter[] parameters)
+   в CentralService.Program.<>c__DisplayClass8.<Main>b__3() в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\Program.cs:строка 43
+   в Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass0_0`1.<ConstructUsing>b__0(HostSettings settings)
+   в Topshelf.Builders.DelegateServiceBuilder`1.Build(HostSettings settings)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Topshelf.Builders.DelegateServiceBuilder`1.Build(HostSettings settings)
+   в Topshelf.Builders.RunBuilder.Build(ServiceBuilder serviceBuilder)
+   в Topshelf.HostConfigurators.HostConfiguratorImpl.CreateHost()
+   в Topshelf.HostFactory.New(Action`1 configureCallback)
+2016/09/25 17:50:11.784 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:50:11.913 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:54:17.489 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:54:17.523 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:54:47.372 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:54:47.411 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:55:21.722 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:55:21.749 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:56:50.039 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:56:50.068 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:58:06.140 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:58:06.170 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:58:06.731 Running as a console application, creating the console host. 
+2016/09/25 17:58:06.755 Starting up as a console application 
+2016/09/25 17:58:06.821 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 17:58:29.229 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:58:29.254 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:58:29.681 Running as a console application, creating the console host. 
+2016/09/25 17:58:29.695 Starting up as a console application 
+2016/09/25 17:58:29.771 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 17:59:29.930 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:59:29.963 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:59:30.436 Running as a console application, creating the console host. 
+2016/09/25 17:59:30.469 Starting up as a console application 
+2016/09/25 17:59:30.522 An exception occurred System.FormatException: Индекс (отсчитываемый от нуля) должен быть больше или равен нулю, но меньше размера списка аргументов.
+   в System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   в System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   в System.String.Format(String format, Object arg0, Object arg1, Object arg2)
+   в AopDProxy.ServiceInterceptor.Intercept(IInvocation invocation) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\ServiceInterceptor.cs:строка 17
+   в Castle.DynamicProxy.AbstractInvocation.Proceed()
+   в Castle.Proxies.ICentralServiceProxy.Start()
+   в CentralService.Program.<>c__DisplayClass8.<Main>b__4(ICentralService serv) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\Program.cs:строка 44
+   в Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass2_0`1.<WhenStarted>b__0(T service, HostControl control)
+   в Topshelf.Builders.DelegateServiceBuilder`1.DelegateServiceHandle.Start(HostControl hostControl)
+   в Topshelf.Hosts.ConsoleRunHost.Run()
+2016/09/25 17:59:46.387 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:59:46.416 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:59:46.816 Running as a console application, creating the console host. 
+2016/09/25 17:59:46.829 Starting up as a console application 
+2016/09/25 17:59:46.845 An exception occurred System.FormatException: Индекс (отсчитываемый от нуля) должен быть больше или равен нулю, но меньше размера списка аргументов.
+   в System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   в System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   в System.String.Format(String format, Object arg0, Object arg1, Object arg2)
+   в AopDProxy.ServiceInterceptor.Intercept(IInvocation invocation) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\AopDProxy\ServiceInterceptor.cs:строка 17
+   в Castle.DynamicProxy.AbstractInvocation.Proceed()
+   в Castle.Proxies.ICentralServiceProxy.Start()
+   в CentralService.Program.<>c__DisplayClass8.<Main>b__4(ICentralService serv) в d:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\Program.cs:строка 44
+   в Topshelf.ServiceConfiguratorExtensions.<>c__DisplayClass2_0`1.<WhenStarted>b__0(T service, HostControl control)
+   в Topshelf.Builders.DelegateServiceBuilder`1.DelegateServiceHandle.Start(HostControl hostControl)
+   в Topshelf.Hosts.ConsoleRunHost.Run()
+2016/09/25 17:59:54.180 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 17:59:54.214 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 17:59:54.903 Running as a console application, creating the console host. 
+2016/09/25 17:59:54.942 Starting up as a console application 
+2016/09/25 18:00:19.019 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 18:00:19.052 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:00:19.503 Running as a console application, creating the console host. 
+2016/09/25 18:00:19.517 Starting up as a console application 
+2016/09/25 18:00:19.571 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 18:03:55.615 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 18:03:55.644 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:03:56.035 Running as a console application, creating the console host. 
+2016/09/25 18:03:56.049 Starting up as a console application 
+2016/09/25 18:03:56.129 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 18:08:11.411 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 18:08:11.523 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:08:11.857 Running as a console application, creating the console host. 
+2016/09/25 18:08:11.871 Starting up as a console application 
+2016/09/25 18:08:11.950 The CentralService service is now running, press Control+C to exit. 
+2016/09/25 18:43:20.386 Configuration Result:
+[Success] Name CentralService, [Success] ServiceName CentralService 
+2016/09/25 18:43:20.418 Topshelf v4.0.0.0, .NET Framework v4.0.30319.42000 
+2016/09/25 18:43:20.955 Running as a console application, creating the console host. 
+2016/09/25 18:43:20.970 Starting up as a console application 
+2016/09/25 18:43:21.049 The CentralService service is now running, press Control+C to exit. 

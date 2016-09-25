@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CentralService
 {
-    class CentralSaveService
+    class CentralSaveService : ICentralService
     {
         private const string queueName = "pdfqueue";
         private const string statusQueue = "status";
@@ -91,6 +91,7 @@ namespace CentralService
             watcher.EnableRaisingEvents = true;
         }
 
+        [CodeRewritingInterceptor.PostSharpInterceptorAspect]
         public void Stop()
         {
             watcher.EnableRaisingEvents = false;
@@ -99,7 +100,7 @@ namespace CentralService
             statusThread.Join();
         }
 
-        private void Scan(object obj)
+        public void Scan(object obj)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
@@ -135,7 +136,7 @@ namespace CentralService
             }
         }
 
-        private void Status(object obj)
+        public void Status(object obj)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())

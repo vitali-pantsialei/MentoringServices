@@ -9,3 +9,17 @@ D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\NLog.x
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\obj\Debug\CentralService.exe
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\obj\Debug\CentralService.pdb
 D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\obj\Debug\CentralService.csprojResolveAssemblyReference.cache
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\NLog.config
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\AopDProxy.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\Castle.Core.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\Ninject.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\AopDProxy.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\Castle.Core.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\Ninject.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\CodeRewritingInterceptor.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\PostSharp.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\CodeRewritingInterceptor.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\PostSharp.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\bin\Debug\CentralService.pssym
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\obj\Debug\CentralService.exe.postsharp
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CentralService\obj\Debug\PostSharpHost.config

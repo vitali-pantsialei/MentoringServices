@@ -1,0 +1,13 @@
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\NLog.config
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\CodeRewritingInterceptor.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\CodeRewritingInterceptor.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\NLog.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\PostSharp.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\NLog.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\PostSharp.xml
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\bin\Debug\CodeRewritingInterceptor.pssym
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\obj\Debug\CodeRewritingInterceptor.csprojResolveAssemblyReference.cache
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\obj\Debug\CodeRewritingInterceptor.dll.postsharp
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\obj\Debug\CodeRewritingInterceptor.dll
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\obj\Debug\CodeRewritingInterceptor.pdb
+D:\Vitali_Pantsialei\Mentoring\MentoringServices\CodeRewritingInterceptor\obj\Debug\PostSharpHost.config

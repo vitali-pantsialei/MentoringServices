@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using Ninject;
+using NLog;
 using NLog.Config;
 using NLog.Targets;
 using RabbitMQ.Client;
@@ -19,31 +20,32 @@ namespace CentralService
         static void Main(string[] args)
         {
             var currentDir = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            var outDir = Path.Combine(currentDir, "out");
-            var statDir = Path.Combine(currentDir, "status");
-            var confDir = Path.Combine(currentDir, "config");
+            CentralServiceModule csm = new CentralServiceModule();
 
-            var conf = new LoggingConfiguration();
-            var fileTarget = new FileTarget()
+            using (IKernel kernel = new StandardKernel(csm))
             {
-                Name = "Default",
-                FileName = Path.Combine(currentDir, "log.txt"),
-                Layout = "${date} ${message} ${onexception:inner=${exception:format=toString}}"
-            };
-            conf.AddTarget(fileTarget);
-            conf.AddRuleForAllLevels(fileTarget);
+                var conf = new LoggingConfiguration();
+                var fileTarget = new FileTarget()
+                {
+                    Name = "Default",
+                    FileName = Path.Combine(currentDir, "log.txt"),
+                    Layout = "${date} ${message} ${onexception:inner=${exception:format=toString}}"
+                };
+                conf.AddTarget(fileTarget);
+                conf.AddRuleForAllLevels(fileTarget);
 
-            var logFactory = new LogFactory(conf);
+                var logFactory = new LogFactory(conf);
 
-            HostFactory.Run(
-                hostConf => hostConf.Service<CentralSaveService>(
-                    s =>
-                    {
-                        s.ConstructUsing(() => new CentralSaveService(outDir, statDir, confDir));
-                        s.WhenStarted(serv => serv.Start());
-                        s.WhenStopped(serv => serv.Stop());
-                    }
-                    ).UseNLog(logFactory));
+                HostFactory.Run(
+                    hostConf => hostConf.Service<ICentralService>(
+                        s =>
+                        {
+                            s.ConstructUsing(() => kernel.Get<ICentralService>());
+                            s.WhenStarted(serv => serv.Start());
+                            s.WhenStopped(serv => serv.Stop());
+                        }
+                        ).UseNLog(logFactory));
+            }
         }
     }
 }
